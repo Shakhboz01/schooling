@@ -1,0 +1,23 @@
+<br><br>
+<h1>Groups</h1>
+
+<table class='table table-stripped table-hover'>
+  <thead>
+    <tr>
+      <th>Teacher</th>
+      <th>Name</th>
+      <th>Number of students</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% user.groups.each do |group| %>
+      <tr>
+        <td><%= group.user.firstname %></td>
+        <td><%= group.name %></td>
+        <td><%= group.users.count %></td>
+        <td><%= link_to 'Show', group %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

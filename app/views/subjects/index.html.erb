@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Subjects</h1>
-
+<div id='new_subject'>
+<%= render 'form', subject: @subject %>
+</div>
+<%= render 'subjects_turbo' %>
 <table>
   <thead>
     <tr>
@@ -12,7 +15,7 @@
 
   <tbody>
     <% @subjects.each do |subject| %>
-      <tr>
+      <tr id="subject_#{subject.id}" >
         <td><%= subject.name %></td>
         <td><%= link_to 'Show', subject %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
@@ -23,5 +26,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Subject', new_subject_path %>

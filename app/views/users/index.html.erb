@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Phone number</th>
+      <th>Status</th>
+      <th>Role</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.age %></td>
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.phone_number %></td>
+        <td><%= user.status %></td>
+        <td><%= user.role %></td>
+        <td><%= user.comment %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>
+<br>
+
+<%= link_to 'New User', new_user_path %>

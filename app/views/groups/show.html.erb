@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @group.subject_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Monthly amount:</strong>
+  <%= @group.monthly_amount %>
+</p>
+
+<p>
+  <strong>Daily amount:</strong>
+  <%= @group.daily_amount %>
+</p>
+
+<p>
+  <strong>Teacher payment:</strong>
+  <%= @group.teacher_payment %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @group.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
+<br>
+<%= render 'group_students', group: @group %>
+<%= render 'group_users/form', group_user: GroupUser.new, group_id: @group.id %>
